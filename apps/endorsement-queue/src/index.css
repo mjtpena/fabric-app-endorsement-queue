@@ -1,0 +1,304 @@
+@import 'tailwindcss';
+@import '@x10/shared/styles.css';
+@source "../../../shared/src";
+
+/* ------------------------------------------------------------------ seal tokens (both themes) */
+
+:root {
+  /* Level metals: gold for Certified, slate for Promoted. */
+  --seal-gold: var(--gold-9);
+  --seal-slate: color-mix(in oklab, var(--blue-9) 30%, #5b6470);
+  /* Categories (owner, reviewer, workspace lenses). */
+  --seal-c0: var(--indigo-9);
+  --seal-c1: var(--teal-9);
+  --seal-c2: var(--coral-9);
+  --seal-c3: var(--plum-9);
+  --seal-c4: var(--blue-9);
+  --seal-c5: var(--amber-9);
+  --seal-c6: var(--violet-9);
+  --seal-c7: var(--cyan-9);
+  --seal-none: color-mix(in oklab, var(--gray-9) 80%, var(--gray-6));
+  --seal-pending: color-mix(in oklab, var(--gray-8) 70%, var(--gray-6));
+  /* Face, ink and wax. */
+  --seal-face-hi: #fffdf7;
+  --seal-face-lo: #ece5d4;
+  --seal-ink: #2c2618;
+  --seal-engrave: rgb(40 32 12 / 0.62);
+  --wax-hi: #f4efe5;
+  --wax-lo: #c9bea6;
+  --wax-line: rgb(80 66 40 / 0.4);
+  /* The hall. */
+  --hall-wall: #f1ede5;
+  --hall-wall-2: #e8e2d6;
+  --hall-niche: #e4ddcf;
+  --hall-niche-2: #d9d1c0;
+  --hall-floor: #ddd5c4;
+  --hall-floor-2: #cfc6b2;
+  --hall-light: rgb(255 238 196 / 0.75);
+  --hall-ledge: #f7f3ea;
+  --hall-ledge-2: #d7cfbd;
+  --hall-ink: #2a2620;
+  --hall-ink-muted: #6e675a;
+  --hall-mote: rgb(255 240 200 / 0.9);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --seal-slate: color-mix(in oklab, var(--blue-9) 32%, #8a94a3);
+    --seal-face-hi: #3a3527;
+    --seal-face-lo: #22201a;
+    --seal-ink: #f3ecd9;
+    --seal-engrave: rgb(255 246 220 / 0.6);
+    --wax-hi: #4a463e;
+    --wax-lo: #2c2a25;
+    --wax-line: rgb(255 240 210 / 0.16);
+    --hall-wall: #17181c;
+    --hall-wall-2: #121317;
+    --hall-niche: #0f1013;
+    --hall-niche-2: #1b1c21;
+    --hall-floor: #1d1c1a;
+    --hall-floor-2: #141412;
+    --hall-light: rgb(255 214 140 / 0.42);
+    --hall-ledge: #2a2925;
+    --hall-ledge-2: #1a1917;
+    --hall-ink: #ece8de;
+    --hall-ink-muted: #a39d90;
+    --hall-mote: rgb(255 220 150 / 0.75);
+  }
+}
+
+:root[data-theme='dark'] {
+  --seal-slate: color-mix(in oklab, var(--blue-9) 32%, #8a94a3);
+  --seal-face-hi: #3a3527;
+  --seal-face-lo: #22201a;
+  --seal-ink: #f3ecd9;
+  --seal-engrave: rgb(255 246 220 / 0.6);
+  --wax-hi: #4a463e;
+  --wax-lo: #2c2a25;
+  --wax-line: rgb(255 240 210 / 0.16);
+  --hall-wall: #17181c;
+  --hall-wall-2: #121317;
+  --hall-niche: #0f1013;
+  --hall-niche-2: #1b1c21;
+  --hall-floor: #1d1c1a;
+  --hall-floor-2: #141412;
+  --hall-light: rgb(255 214 140 / 0.42);
+  --hall-ledge: #2a2925;
+  --hall-ledge-2: #1a1917;
+  --hall-ink: #ece8de;
+  --hall-ink-muted: #a39d90;
+  --hall-mote: rgb(255 220 150 / 0.75);
+}
+
+/* ------------------------------------------------------------------ hall motion */
+
+.eq-place {
+  transition:
+    transform 720ms cubic-bezier(0.2, 0, 0, 1),
+    opacity 240ms cubic-bezier(0.2, 0, 0, 1),
+    filter 240ms cubic-bezier(0.2, 0, 0, 1);
+}
+.eq-seal {
+  cursor: pointer;
+  outline: none;
+}
+.eq-seal .eq-lift {
+  transition: transform 180ms cubic-bezier(0.2, 0, 0, 1);
+}
+.eq-seal:hover .eq-lift {
+  transform: translateY(-4px) scale(1.03);
+}
+.eq-seal .eq-focus-ring {
+  opacity: 0;
+  transition: opacity 120ms;
+}
+.eq-seal:focus-visible .eq-focus-ring {
+  opacity: 1;
+}
+.eq-rim-fill {
+  transition: fill 420ms cubic-bezier(0.2, 0, 0, 1), stroke 420ms cubic-bezier(0.2, 0, 0, 1);
+}
+.eq-arc {
+  transition: stroke-dashoffset 1100ms cubic-bezier(0.2, 0, 0, 1), stroke 300ms;
+}
+.eq-light {
+  animation: eq-breathe 9s ease-in-out infinite;
+}
+.eq-mote {
+  animation: eq-drift var(--d, 14s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+.eq-halo {
+  animation: eq-halo 2.4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.eq-assay-spin {
+  animation: eq-spin 24s linear infinite;
+  transform-box: view-box;
+}
+
+@keyframes eq-breathe {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes eq-drift {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx, 30px), var(--dy, 160px));
+    opacity: 0;
+  }
+}
+@keyframes eq-halo {
+  0%,
+  100% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.04);
+  }
+}
+@keyframes eq-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ------------------------------------------------------------------ pressed wax */
+
+.eq-stamp .eq-stamp-wax {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: eq-wax 900ms cubic-bezier(0.2, 0, 0, 1) both;
+}
+.eq-stamp .eq-stamp-die {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: eq-press 1100ms cubic-bezier(0.3, 0, 0.1, 1) both;
+}
+.eq-stamp .eq-stamp-ripple {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: eq-ripple 900ms 620ms cubic-bezier(0.2, 0, 0, 1) both;
+}
+.eq-stamp .eq-stamp-shine {
+  animation: eq-shine 1200ms 900ms ease-out both;
+}
+.eq-stamp-shake {
+  animation: eq-shake 320ms 640ms ease-out both;
+}
+
+@keyframes eq-wax {
+  0% {
+    transform: scale(0.25);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  60% {
+    transform: scale(0.82);
+  }
+  72% {
+    transform: scale(1.09);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes eq-press {
+  0% {
+    transform: scale(1.7) translateY(-30px);
+    opacity: 0;
+    filter: blur(3px);
+  }
+  45% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  58% {
+    transform: scale(0.94);
+  }
+  72% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes eq-ripple {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+@keyframes eq-shine {
+  0% {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+  30% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+}
+@keyframes eq-shake {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  30% {
+    transform: translate(0, 3px);
+  }
+  60% {
+    transform: translate(0, -1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eq-place,
+  .eq-arc,
+  .eq-rim-fill,
+  .eq-seal .eq-lift {
+    transition: none;
+  }
+  .eq-light,
+  .eq-mote,
+  .eq-halo,
+  .eq-assay-spin,
+  .eq-stamp .eq-stamp-wax,
+  .eq-stamp .eq-stamp-die,
+  .eq-stamp .eq-stamp-ripple,
+  .eq-stamp .eq-stamp-shine,
+  .eq-stamp-shake {
+    animation: none;
+  }
+  .eq-stamp .eq-stamp-ripple,
+  .eq-stamp .eq-stamp-shine,
+  .eq-mote {
+    opacity: 0;
+  }
+}
