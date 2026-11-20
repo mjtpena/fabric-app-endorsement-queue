@@ -1,107 +1,107 @@
 1
-00:00:03,209 --> 00:00:05,911
+00:00:03,211 --> 00:00:05,913
 This is the hall of seals: every endorsed
 
 2
-00:00:05,911 --> 00:00:09,009
+00:00:05,913 --> 00:00:09,011
 semantic model hangs here as its own medallion.
 
 3
-00:00:09,459 --> 00:00:13,198
+00:00:09,461 --> 00:00:13,200
 Gold rings are Certified, slate rings are Promoted, and the
 
 4
-00:00:13,198 --> 00:00:15,859
+00:00:13,200 --> 00:00:15,861
 outer arc is how much of the year is left.
 
 5
-00:00:16,899 --> 00:00:19,709
+00:00:16,888 --> 00:00:19,698
 Switch the lens to expiry and the hall
 
 6
-00:00:19,709 --> 00:00:23,629
+00:00:19,698 --> 00:00:23,618
 regroups: expired, renewal due, valid, and no expiry.
 
 7
-00:00:24,439 --> 00:00:27,690
+00:00:24,419 --> 00:00:27,670
 Today ranks what needs attention; this one flies me
 
 8
-00:00:27,690 --> 00:00:30,749
+00:00:27,670 --> 00:00:30,729
 to Sales Performance, ten days from running out.
 
 9
-00:00:31,551 --> 00:00:35,601
+00:00:31,532 --> 00:00:35,582
 View as owner, and everything that is not mine steps back.
 
 10
-00:00:36,051 --> 00:00:37,091
+00:00:36,032 --> 00:00:37,072
 Back to everyone.
 
 11
-00:00:39,797 --> 00:00:43,212
+00:00:39,685 --> 00:00:43,100
 Open requests wait on the assay bench as unstamped
 
 12
-00:00:43,212 --> 00:00:46,627
+00:00:43,100 --> 00:00:46,515
 wax, with the reviewer’s progress around each one.
 
 13
-00:00:47,428 --> 00:00:50,563
+00:00:47,351 --> 00:00:50,486
 On the assay desk, the owner’s claim and
 
 14
-00:00:50,563 --> 00:00:54,168
+00:00:50,486 --> 00:00:54,091
 evidence sit beside my verdict for every item.
 
 15
-00:00:54,618 --> 00:00:57,776
+00:00:54,541 --> 00:00:57,699
 Not applicable is only allowed for security,
 
 16
-00:00:57,776 --> 00:01:00,718
+00:00:57,699 --> 00:01:00,641
 tests and labels, and only with evidence.
 
 17
-00:01:01,729 --> 00:01:06,329
+00:01:01,624 --> 00:01:06,224
 Approving needs a note, and a Certified seal runs for twelve months.
 
 18
-00:01:06,779 --> 00:01:10,612
+00:01:06,674 --> 00:01:10,507
 The app strikes the seal and records the review; I
 
 19
-00:01:10,612 --> 00:01:15,289
+00:01:10,507 --> 00:01:15,184
 still apply the badge in Fabric, under Settings, Endorsement.
 
 20
-00:01:16,103 --> 00:01:19,913
+00:01:15,997 --> 00:01:19,807
 Back in the hall, the new seal is pressed into
 
 21
-00:01:19,913 --> 00:01:23,888
+00:01:19,807 --> 00:01:23,782
 the wax and hangs with the others, its arc full.
 
 22
-00:01:24,699 --> 00:01:28,649
+00:01:24,590 --> 00:01:28,540
 Renewals lists the seals whose arc is nearly drained.
 
 23
-00:01:29,099 --> 00:01:33,529
+00:01:28,990 --> 00:01:33,420
 Start renewal opens a new request prefilled from the old one.
 
 24
-00:01:33,979 --> 00:01:37,879
+00:01:33,870 --> 00:01:37,770
 The seal register holds the same records as a table, with
 
 25
-00:01:37,879 --> 00:01:40,889
+00:01:37,770 --> 00:01:40,780
 a trail check on every row and a CSV export.
 
 26
-00:01:41,699 --> 00:01:45,372
+00:01:41,594 --> 00:01:45,267
 A checklist, a named reviewer and a trail you can
 
 27
-00:01:45,372 --> 00:01:49,119
+00:01:45,267 --> 00:01:49,014
 show anyone: that is what a badge should stand on.

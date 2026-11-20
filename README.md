@@ -49,7 +49,7 @@ Demo video (about 2 minutes, AI-generated narration, captions burned in): [demo/
 
 ## Prerequisites
 
-- A Fabric tenant with the **Fabric Apps** workload (preview) enabled.
+- A Fabric tenant with the **Fabric Apps** workload enabled.
 - A workspace on a Fabric capacity, and **Edit** (Contributor or higher) permission on it to deploy.
 - Node.js 20 or later.
 - Users need access to the app item (workspace members get it by default). No connector and no extra tenant setting

@@ -131,7 +131,7 @@ export function AboutPage() {
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-ui text-faint">Built by Datachain Consulting for AI @Work. Runs on Microsoft Fabric Apps (preview).</p>
+        <p className="mt-6 text-ui text-faint">Built by Datachain Consulting for AI @Work. Runs on Microsoft Fabric Apps.</p>
       </section>
     </div>
   );
